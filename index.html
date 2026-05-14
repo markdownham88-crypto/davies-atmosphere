@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Atmosphere of Human Systems — Donald Innes Davies in Dialogue</title>
+<style>
+
+  /* ── Reset & base ─────────────────────────────────────────────── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  /* ── Palette ──────────────────────────────────────────────────── */
+  :root {
+    --ivory:      #FBF8F3;
+    --ivory2:     #F3EDE3;
+    --ink:        #1C1410;
+    --plum:       #3D1F3D;
+    --plum-mid:   #6B3F6B;
+    --copper:     #8B5E3C;
+    --faint:      #A89880;
+    --rule:       #C9B8A8;
+    --quote-bar:  #8B5E3C;
+  }
+
+  /* ── Page ─────────────────────────────────────────────────────── */
+  html { background: var(--ivory); }
+
+  body {
+    background: var(--ivory);
+    color: var(--ink);
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 18px;
+    line-height: 1.85;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 32px 120px;
+  }
+
+  /* ── Navigation progress bar ──────────────────────────────────── */
+  #progress {
+    position: fixed;
+    top: 0; left: 0;
+    height: 3px;
+    width: 0%;
+    background: var(--copper);
+    z-index: 100;
+    transition: width 0.1s;
+  }
+
+  /* ── Title page ───────────────────────────────────────────────── */
+  .title-page {
+    text-align: center;
+    padding: 100px 0 80px;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 72px;
+  }
+
+  .title-page h1 {
+    font-size: 3em;
+    color: var(--plum);
+    font-weight: bold;
+    letter-spacing: -0.01em;
+    line-height: 1.15;
+    margin-bottom: 12px;
+  }
+
+  .title-page .subtitle {
+    font-size: 1.15em;
+    color: var(--copper);
+    font-style: italic;
+    margin-bottom: 36px;
+  }
+
+  .title-page .rule-copper {
+    width: 80px;
+    height: 2px;
+    background: var(--copper);
+    margin: 28px auto;
+  }
+
+  .title-page .themes {
+    font-size: 0.85em;
+    color: var(--plum-mid);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    line-height: 2.2;
+  }
+
+  .ornament {
+    color: var(--copper);
+    font-size: 1.6em;
+    text-align: center;
+    display: block;
+    margin: 48px 0;
+    user-select: none;
+  }
+
+  /* ── Preamble ─────────────────────────────────────────────────── */
+  .preamble {
+    font-style: italic;
+    color: var(--plum-mid);
+    font-size: 0.93em;
+    padding: 28px 0;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 80px;
+    line-height: 1.9;
+  }
+
+  /* ── Section headings ─────────────────────────────────────────── */
+  .section {
+    margin-top: 80px;
+    padding-top: 60px;
+    border-top: 2px solid var(--copper);
+  }
+
+  .section-number {
+    display: block;
+    font-size: 0.72em;
+    color: var(--copper);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .section h2 {
+    font-size: 1.85em;
+    color: var(--plum);
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 40px;
+  }
+
+  /* ── Block quotation ──────────────────────────────────────────── */
+  .quote-block {
+    background: var(--ivory2);
+    border-left: 5px solid var(--copper);
+    padding: 32px 36px 28px 40px;
+    margin: 48px 0;
+    position: relative;
+  }
+
+  .quote-block::before {
+    content: '\201C';
+    position: absolute;
+    top: 12px;
+    left: 14px;
+    font-size: 3.2em;
+    color: var(--copper);
+    line-height: 1;
+    font-family: Georgia, serif;
+  }
+
+  .quote-block .quote-text {
+    font-style: italic;
+    color: var(--plum-mid);
+    font-size: 0.97em;
+    line-height: 1.9;
+    padding-top: 8px;
+  }
+
+  .quote-block .attribution {
+    text-align: right;
+    font-size: 0.82em;
+    color: var(--copper);
+    font-style: italic;
+    margin-top: 20px;
+    padding-top: 14px;
+    border-top: 1px solid var(--rule);
+  }
+
+  /* ── Body paragraphs ──────────────────────────────────────────── */
+  .body-text {
+    color: var(--ink);
+    text-align: justify;
+    hyphens: auto;
+    margin: 24px 0;
+    font-size: 1em;
+  }
+
+  /* ── Taupe divider ────────────────────────────────────────────── */
+  .divider {
+    border: none;
+    border-top: 1px solid var(--rule);
+    margin: 48px 0;
+  }
+
+  /* ── Closing epigraph ─────────────────────────────────────────── */
+  .closing {
+    text-align: center;
+    padding: 72px 0 60px;
+    border-top: 2px solid var(--copper);
+    margin-top: 80px;
+  }
+
+  .closing .epigraph-line {
+    font-style: italic;
+    color: var(--plum);
+    font-size: 1.3em;
+    line-height: 1.7;
+    margin: 8px 0;
+  }
+
+  /* ── Sticky header ────────────────────────────────────────────── */
+  .site-header {
+    position: sticky;
+    top: 0;
+    background: var(--ivory);
+    border-bottom: 1px solid var(--rule);
+    padding: 10px 0;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.78em;
+    color: var(--faint);
+    font-style: italic;
+  }
+
+  .site-header span { color: var(--copper); }
+
+  /* ── Back to top ──────────────────────────────────────────────── */
+  #back-top {
+    position: fixed;
+    bottom: 36px;
+    right: 36px;
+    background: var(--plum);
+    color: var(--ivory);
+    border: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    font-size: 1.2em;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 99;
+  }
+  #back-top.visible { opacity: 1; }
+  #back-top:hover { background: var(--copper); }
+
+  /* ── Responsive ───────────────────────────────────────────────── */
+  @media (max-width: 600px) {
+    body { font-size: 16px; padding: 0 20px 80px; }
+    .title-page h1 { font-size: 2.1em; }
+    .section h2 { font-size: 1.45em; }
+    .quote-block { padding: 24px 20px 20px 28px; }
+    #back-top { bottom: 20px; right: 20px; }
+  }
+
+</style>
+</head>
+<body>
+
+<div id="progress"></div>
+
+<header class="site-header">
+  <span>The Atmosphere of Human Systems</span>
+  <em>Donald Innes Davies in Dialogue &nbsp;&middot;&nbsp; 2026</em>
+</header>
+
+<!-- ═══ TITLE PAGE ════════════════════════════════════════════════ -->
+<div class="title-page">
+  <h1>The Atmosphere<br>of Human Systems</h1>
+  <p class="subtitle">Donald Innes Davies in Dialogue</p>
+  <div class="rule-copper"></div>
+  <div class="themes">
+    On Organisational Energy<br>
+    Gestalt Relational Fields<br>
+    Human Toroidal Electromagnetic Fields<br>
+    Shifting Atmospheres<br>
+    Reichian Orgone Theory
+  </div>
+  <div class="rule-copper" style="margin-top:32px;"></div>
+</div>
+
+<!-- ═══ PREAMBLE ══════════════════════════════════════════════════ -->
+<p class="preamble">
+  The following engages with each of Donald Innes Davies&rsquo;s direct quotations from
+  <em>The Atmosphere of Human Systems</em> (2026), drawn from Kevin Flinn&rsquo;s
+  <em>A Web of Relations</em>. Every quotation is preserved in full and in its original form.
+  The commentary between and around them brings Davies into conversation with the theoretical
+  territory mapped in the prior exchange: organisational energy as field phenomenon, Gestalt
+  relational field theory, the toroidal electromagnetic field research of the HeartMath Institute,
+  and Wilhelm Reich&rsquo;s orgone theory and the concept of character armour.
+</p>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- SECTION I -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="section">
+  <span class="section-number">I</span>
+  <h2>The Dedication: Where Philosophy Meets the Body</h2>
+
+  <div class="quote-block">
+    <p class="quote-text">Philosophy begins in wonder. Practice begins in noticing.</p>
+    <p class="attribution">&mdash; Donald Innes Davies, <em>The Atmosphere of Human Systems</em>, Dedication, 2026</p>
+  </div>
+
+  <p class="body-text">This single sentence, offered at the book&rsquo;s threshold, is already a field claim. Wonder &mdash; Aristotle&rsquo;s <em>thaumazein</em>, the condition he identified as the origin of all philosophical inquiry &mdash; is not a cognitive state. It is a somatic one. The body opens when it wonders. Breath deepens. The chest expands. The muscular armour that Wilhelm Reich described as the chronic contraction of the defended self momentarily releases. And it is precisely in that release &mdash; in the gap between armature and exposure &mdash; that genuine perception becomes possible.</p>
+
+  <p class="body-text">Practice begins in noticing: Davies is pointing at the same thing Reich pointed at in his clinical work with character structure, but arriving from a different direction. For Reich, the practitioner&rsquo;s primary task was to read the body&rsquo;s armour &mdash; the chronic muscular contractions, the breath held at the diaphragm, the shoulders raised against what the person could not afford to feel &mdash; because the armour <em>was</em> the information. The blocked orgone charge expressed itself structurally, in the shape the body had taken to contain what it could not process. Davies&rsquo;s practitioner is learning to notice the organisational equivalent: the charged atmosphere, the relational stiffness, the conversational patterns that are the group&rsquo;s armour made visible. Both begin in the same discipline: attending to what is already present before the analytical framework has organised it away.</p>
+</div>
+
+<span class="ornament">&#10103;</span>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- SECTION II -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="section">
+  <span class="section-number">II</span>
+  <h2>The Author&rsquo;s Note: The Further Sense</h2>
+
+  <div class="quote-block">
+    <p class="quote-text">Many human beings are taught from an early age to recognise the five senses through which we encounter the world. We speak of sight, hearing, touch, taste, and smell. Some more recent developments in science add a sixth, proprioception, the body&rsquo;s awareness of itself in space. Yet within human life and interaction there is another capacity, rarely named yet constantly at work. We register the tone of a room before a word is spoken. We feel the distance or closeness of others without measuring it. We sense tension, openness, alignment, or withdrawal in ways that are immediate and difficult to explain. This is not inference. It is not analysis. It is a form of perception.</p>
+    <p class="attribution">&mdash; Donald Innes Davies, <em>The Atmosphere of Human Systems</em>, Author&rsquo;s Note, 2026</p>
+  </div>
+
+  <p class="body-text">What Davies is naming here is the perceptual register at which the toroidal electromagnetic field of the human body operates. The HeartMath Institute&rsquo;s research on the cardiac field established that the heart generates an electromagnetic field structured as a torus &mdash; a self-sustaining field that extends beyond the skin in all directions, carrying information about the body&rsquo;s internal state in a form detectable by others within proximity. This is not metaphor. The field is measurable. It carries what HeartMath researchers call <em>heart rhythm coherence</em> as information that other bodies register before any conscious processing has begun.</p>
+
+  <p class="body-text">When Davies says we register the tone of a room before a word is spoken, he is describing the body&rsquo;s reading of overlapping toroidal fields. Individual toroidal fields interact when people share space. The resulting configuration &mdash; amplified, dampened, or in complex interference &mdash; is the atmospheric quality that the practitioner&rsquo;s further sense reads. This is Davies&rsquo;s perceptual claim made energetically precise: the seventh sense is the somatic instrument through which the relational field&rsquo;s toroidal configuration becomes perceptible.</p>
+
+  <p class="body-text">Reich would have recognised this immediately. His concept of <em>orgone streaming</em> &mdash; the free flow of bioenergetic charge through an organism whose armour had been sufficiently dissolved &mdash; is the state in which the body becomes maximally sensitive to the energetic field of others. The de-armoured practitioner is the practitioner whose own field is sufficiently coherent and unobstructed to read what Davies calls the further sense. The chronic armour is not merely a psychological defence; it is also a perceptual screen, blocking the very instrument through which the atmospheric field can be most fully received.</p>
+
+  <hr class="divider">
+
+  <div class="quote-block">
+    <p class="quote-text">This book turns towards that capacity. It explores the possibility that human beings act as if they possess a further sense, one attuned to the atmosphere of interaction, through which social worlds are not only interpreted, but directly experienced.</p>
+    <p class="attribution">&mdash; Donald Innes Davies, <em>The Atmosphere of Human Systems</em>, Author&rsquo;s Note, 2026</p>
+  </div>
+
+  <p class="body-text">The phrase <em>directly experienced</em> carries the full weight of phenomenological tradition. Gestalt field theory, following Kurt Lewin&rsquo;s <em>Feldtheorie</em>, insists that the field is not background but ground: it constitutes what becomes figure, what recedes, and what cannot appear at all. The organism does not first exist and then encounter the field. The organism-in-its-field is the primary ontological unit.</p>
+
+  <p class="body-text">Davies&rsquo;s further sense is the organism&rsquo;s capacity to directly experience &mdash; not infer, not analyse &mdash; the gestalt field&rsquo;s current configuration. What Gestalt therapy names as the <em>contact boundary</em> &mdash; the living edge at which organism and environment continuously differentiate and connect &mdash; is the site of this direct experience. The practitioner who has developed the further sense is the practitioner whose contact boundary is sufficiently permeable and discriminating to register the field&rsquo;s quality without either closing down (armour) or being overwhelmed (merger). This is Gestalt&rsquo;s <em>mature contact</em>: the capacity to be genuinely touched by the field without being dissolved by it.</p>
+
+  <hr class="divider">
+
+  <div class="quote-block">
+    <p class="quote-text">What appears in the language of living systems as pattern, field, or emergence becomes, in human interaction, something that can be sensed. Atmosphere is the form in which these dynamics become perceptible.</p>
+    <p class="attribution">&mdash; Donald Innes Davies, <em>The Atmosphere of Human Systems</em>, Author&rsquo;s Note, 2026</p>
+  </div>
+
+  <p class="body-text">Pattern, field, and emergence are the three primary categories of complexity science. But these are <em>Level 1</em> descriptions: they describe the structure of what is happening from outside the encounter. The atmosphere is how these dynamics become perceptible <em>from inside</em>. The cardiac toroidal field of each person in a group creates, when fields overlap, a collective electromagnetic topology that has patterns, field properties, and exhibits emergence. And it is perceptible: somatically, proprioceptively, through the body&rsquo;s continuous reading of the energetic environment it inhabits.</p>
+
+  <p class="body-text">Reich&rsquo;s orgone theory, at its most defensible, was attempting to describe the biological basis of this same perceptibility. The practitioner&rsquo;s body, de-armoured and coherent, is the living equivalent: an instrument of maximum sensitivity to the field that Davies names atmosphere and Reich named orgone.</p>
+</div>
+
+<span class="ornament">&#10103;</span>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- SECTION III -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="section">
+  <span class="section-number">III</span>
+  <h2>The Preface: Lineage, Learning, and the Inquiry That Is Its Own Practice</h2>
+
+  <div class="quote-block">
+    <p class="quote-text">The atmosphere of interaction within which people interpret situations and respond to one another exerts a powerful influence on what actually unfolds. Decisions are shaped within it. Interpretations arise within it. Possibilities open or close within it. What happens cannot be understood fully without attending to the quality of this surrounding environment.</p>
+    <p class="attribution">&mdash; Donald Innes Davies, <em>The Atmosphere of Human Systems</em>, Preface, 2026</p>
+  </div>
+
+  <p class="body-text">This is a constitutive claim. The atmosphere is not a variable affecting a separately existing process; it is one of the conditions through which the process constitutes itself. Decisions are <em>shaped within</em> the atmosphere &mdash; not affected by it, shaped within it. This is the difference between a causal account and a field account. In Gestalt relational field theory, this is the distinction between <em>linear causation</em> (A affects B) and <em>field constitution</em> (A and B are figures arising within a ground that constitutes both). The implication for practice is significant: if the atmosphere is constitutive, then working on it is not peripheral to the organisation&rsquo;s work &mdash; it is structural to it. This is not soft skills work or culture management. It is, in the most literal sense, organisational physics.</p>
+
+  <hr class="divider">
+
+  <div class="quote-block">
+    <p class="quote-text">Under the guidance of Professors Ralph D. Stacey, Douglas Griffin, and Patricia Shaw, the programme cultivated a perspective grounded in the ongoing relational processes through which human interaction unfolds. Within this orientation, organisational life is not understood primarily as something designed and then implemented. It is understood as something that emerges through participation. Patterns of coordination, meaning, and identity arise in the midst of interaction, not outside it. Strategy, leadership, and culture therefore appear not as fixed properties, but as evolving patterns produced through countless local exchanges among participants.</p>
+    <p class="attribution">&mdash; Donald Innes Davies, <em>The Atmosphere of Human Systems</em>, Preface, 2026</p>
+  </div>
+
+  <p class="body-text">Davies is here mapping his intellectual lineage. The Hertfordshire Complex Responsive Processes tradition &mdash; Stacey, Griffin, Shaw &mdash; was precisely the intellectual environment in which these sensibilities were cultivated. Strategy as an evolving pattern produced through countless local exchanges is the field account of strategy. Each local exchange is a micro-interaction of overlapping toroidal fields, generating its small charge of meaning, which accumulates across the system into the large-scale pattern that management discourse names strategy. The atmospheric practitioner who can read the quality of these micro-interactions has access to the organisation&rsquo;s strategic dynamics at their most generative level.</p>
+
+  <hr class="divider">
+
+  <div class="quote-block">
+    <p class="quote-text">Learning to notice is therefore not a preliminary step that precedes the inquiry. It is the inquiry. It is a process of becoming increasingly sensitive to what is already present and already being sensed in interaction. It is a discipline that develops gradually through practice rather than through instruction alone.</p>
+    <p class="attribution">&mdash; Donald Innes Davies, <em>The Atmosphere of Human Systems</em>, Preface, 2026</p>
+  </div>
+
+  <p class="body-text">This claim radically repositions the practitioner&rsquo;s formation. If learning to notice <em>is</em> the inquiry &mdash; not preparation for it but the thing itself &mdash; then the practitioner&rsquo;s primary discipline is not theoretical mastery but perceptual cultivation. Reich&rsquo;s work on character armour was a theory of perceptual obstruction: the armour prevents the organism from noticing what it is actually experiencing. The armoured person does not simply fail to act on what they feel; they fail to <em>feel</em> what they feel. The therapeutic task was not primarily interpretive but perceptual: restoring the organism&rsquo;s capacity to notice its own somatic experience through the systematic work of dissolving chronic contractions, deepening the breath, allowing the charge to move rather than be held. Davies&rsquo;s noticing practice is the organisational equivalent of this.</p>
+
+  <hr class="divider">
+
+  <div class="quote-block">
+    <p class="quote-text">Through such attention, the atmosphere of human systems becomes perceptible as something that is not only understood but directly sensed in the midst of participation.</p>
+    <p class="attribution">&mdash; Donald Innes Davies, <em>The Atmosphere of Human Systems</em>, Preface, 2026</p>
+  </div>
+
+  <p class="body-text">Directly sensed in the midst of participation: the atmosphere is sensed <em>in the midst</em> &mdash; not before, not after, not from a reflective distance, but in the act itself. This is the Gestalt concept of <em>present-centred awareness</em>: contact happening at the living boundary of organism and environment, not in retrospective reconstruction. The practitioner who can simultaneously be fully inside the encounter (participating) and fully attentive to the encounter&rsquo;s atmospheric quality (noticing) is doing what Gestalt field theory names as the <em>awareness continuum</em>. This is the Heraclitean practitioner: in the river, reading the river, being read by the river, all at once.</p>
+</div>
+
+<span class="ornament">&#10103;</span>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- SECTION IV -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="section">
+  <span class="section-number">IV</span>
+  <h2>The Overture: The Between</h2>
+
+  <div class="quote-block">
+    <p class="quote-text">Much of what shapes social experience does not arise solely from individuals, nor can it be fully accounted for by formal structures, plans, or roles. It emerges between people, within the ongoing flow of interaction. This &ldquo;between&rdquo; is easily overlooked precisely because it is so familiar. Conversations alter the way situations are perceived. A change in tone can reconfigure the meaning of what is being said. Shared attention can transform the character of a room without any formal decision being made. Collective emotion can give rise to moments of synchrony, alignment, or tension that cannot be attributed to the intentions of any single participant. Something is happening, and it is happening relationally, often before it can be clearly named.</p>
+    <p class="attribution">&mdash; Donald Innes Davies, <em>The Atmosphere of Human Systems</em>, Overture, 2026</p>
+  </div>
+
+  <p class="body-text">The <em>between</em> is Davies&rsquo;s most philosophically precise concept, and it maps directly onto what the toroidal field research makes physically visible. Between two people whose cardiac toroidal fields are in proximity, there is literally a zone of field overlap &mdash; a region of electromagnetic space that is constituted by both fields but identical to neither. This zone is not empty. When Davies says that collective emotion can give rise to moments of synchrony that cannot be attributed to any single participant, he is describing what happens when the overlapping toroidal fields of a group move into mutual coherence. The synchrony is a field event, not an individual one. It arises in the between because it is constituted there.</p>
+
+  <p class="body-text">Reich&rsquo;s orgone theory, translated into this framework, becomes a theory of the between: the orgone field is the energetic reality of the between, the medium through which organism-to-organism coupling occurs. The recognition that living systems are not energetically sealed &mdash; that the space between them is not neutral vacuum but charged medium &mdash; is the Reichian insight that the toroidal field research has begun to provide a measurable basis for.</p>
+
+  <hr class="divider">
+
+  <div class="quote-block">
+    <p class="quote-text">In everyday language, we already gesture toward these phenomena. We speak of the mood of a meeting, the climate of an organisation, or the energy of a gathering. These expressions acknowledge that something more than individual intention is at play. They point toward qualities that are experienced directly, often immediately, yet remain difficult to define with precision, and are frequently sensed before they are understood.</p>
+    <p class="attribution">&mdash; Donald Innes Davies, <em>The Atmosphere of Human Systems</em>, Overture, 2026</p>
+  </div>
+
+  <p class="body-text">The vocabulary of everyday life is the practitioner&rsquo;s first source of evidence. The language people reach for when they want to describe what they felt in a meeting &mdash; the energy was off, the atmosphere was toxic, the room felt charged &mdash; is not metaphorical slippage. It is pointing at something real that the analytical vocabulary of management theory has been trained to suppress. The Gestalt tradition has always insisted on this: the language of direct experience is data about the field&rsquo;s configuration, registered through the organism&rsquo;s perceptual system before conceptual processing has begun.</p>
+
+  <p class="body-text">This is also where Reich&rsquo;s clinical legacy is most practically useful. The concept of character armour as a group phenomenon &mdash; <em>social armour</em>, as some post-Reichian theorists have called it &mdash; describes exactly the organisational equivalent of the heavy meeting: the chronic contraction of a system&rsquo;s capacity to process and move its own charge. The organisation that can never quite say the thing that needs to be said has developed collective armour. And like individual armour, it was once adaptive and has become the obstacle to the very vitality it was meant to protect.</p>
+
+  <hr class="divider">
+
+  <div class="quote-block">
+    <p class="quote-text">Atmosphere allows attention to settle on what surrounds experience and is encountered within it, without requiring it to be reduced to a single cause or component. It offers a way of speaking about environments that are formed through interaction and that, in turn, shape how interaction unfolds. Atmospheres carry emotional tone, cultural resonance, and patterns of expectation. They influence what becomes visible, what can be said, and what remains unsaid. They open certain possibilities while quietly closing others. Often, they are sensed before they are understood, and before they can be articulated in language.</p>
+    <p class="attribution">&mdash; Donald Innes Davies, <em>The Atmosphere of Human Systems</em>, Overture, 2026</p>
+  </div>
+
+  <p class="body-text"><em>What remains unsaid</em> is the most energetically charged dimension of the organisational atmosphere. In Reich&rsquo;s framework, what cannot be said &mdash; what is held, contracted, pressed down &mdash; is precisely where the blocked charge accumulates. The organisation&rsquo;s unsaid is not merely an information gap. It is a field phenomenon: the suppressed charge that distorts the relational field around it, generating the distinctive heaviness, the slight falseness of tone, the careful navigation around certain topics that experienced practitioners learn to read as signals of what the system is holding.</p>
+
+  <hr class="divider">
+
+  <div class="quote-block">
+    <p class="quote-text">Social atmospheres emerge through the interplay of communication, culture, and shared attention. They are not imposed from outside, nor are they entirely within the control of any individual. They take shape through participation. The collaborative energy of a group working in alignment, the quiet ease of a conversation in which understanding flows, or the tension that gathers in situations of uncertainty or disagreement all point toward the presence of an atmosphere that is being formed in real time. To notice these dynamics is to begin to encounter social life differently, to register its movement as it unfolds.</p>
+    <p class="attribution">&mdash; Donald Innes Davies, <em>The Atmosphere of Human Systems</em>, Overture, 2026</p>
+  </div>
+
+  <p class="body-text">The atmosphere is <em>formed in real time</em>, not discovered or managed. The Gestalt cycle of experience &mdash; sensation, awareness, mobilisation of energy, action, contact, satisfaction, withdrawal &mdash; is a model of how the field is constituted and reconstituted through each interaction. When the cycle flows, the field is animated, alive, capable of genuine contact and genuine change. When the cycle is interrupted &mdash; when sensation is suppressed, when awareness is avoided, when energy is mobilised but action is blocked &mdash; the field accumulates unmetabolised charge, and the atmosphere becomes heavy with what has not been completed.</p>
+</div>
+
+<span class="ornament">&#10103;</span>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- SECTION V -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="section">
+  <span class="section-number">V</span>
+  <h2>The Introduction: Sensed Before Understood</h2>
+
+  <div class="quote-block">
+    <p class="quote-text">Long before any conclusions are reached, something else has already formed within the room. A tone. A shared orientation. A subtle field of expectation begins to influence how participants listen, speak, and respond to one another. This is not something that simply arrives after interaction begins. It is present from the outset, taking shape through the smallest shifts in attention, posture, and response. A glance, a hesitation, the timing of a reply, the ease or strain in a voice. These do not simply accompany what is happening. They participate in it.</p>
+    <p class="attribution">&mdash; Donald Innes Davies, <em>The Atmosphere of Human Systems</em>, Introduction, 2026</p>
+  </div>
+
+  <p class="body-text">The smallest shifts in attention, posture, and response are toroidal field events. The HeartMath research has shown that changes in cardiac coherence are detectable at proximity by others whose nervous systems are sufficiently sensitised to register them. The glance, the hesitation, the ease or strain in a voice: these are simultaneously behavioural signals and energetic signals perceptible through the further sense Davies has named. A glance is a direction of cardiac field energy. A hesitation is a momentary interruption of energetic flow. The ease or strain in a voice reflects the degree of armour at the throat and chest &mdash; which Reich identified as one of the primary armour segments, the place where expression is either allowed or blocked.</p>
+
+  <hr class="divider">
+
+  <div class="quote-block">
+    <p class="quote-text">Such phenomena are often noticed indirectly. We speak of the mood of the room, the tension in the air, or the sense that something has shifted. These everyday expressions point toward a phenomenon that is rarely examined in its own right: the formation of relational environments in which human interaction unfolds. At times, these environments appear almost immediately. One enters a conversation and senses openness, or guardedness, without needing to analyse it. At other times, they emerge gradually, forming through repeated exchanges until a particular quality of interaction becomes established. They may support collaboration, or they may constrain it. They may invite participation, or quietly inhibit it. In either case, they shape what becomes possible. What is striking is not simply that these environments exist, but that they are encountered directly. They are not first understood and then experienced. They are experienced, often before they can be clearly named.</p>
+    <p class="attribution">&mdash; Donald Innes Davies, <em>The Atmosphere of Human Systems</em>, Introduction, 2026</p>
+  </div>
+
+  <p class="body-text"><em>Experienced before they can be clearly named.</em> This sequence &mdash; experience before naming, sensing before understanding &mdash; is the foundational epistemological claim of the atmospheric account, and it is where the Reichian and Gestalt traditions converge most completely with Davies. For Reich, the armoured organism has inverted this sequence: it no longer experiences first and then names. It names first &mdash; fits experience into category &mdash; and in doing so prevents the direct somatic registration of what is actually present.</p>
+
+  <p class="body-text">Gestalt therapy&rsquo;s emphasis on <em>phenomenological inquiry</em> &mdash; attending to what is, bracketing what it means &mdash; is the method designed to restore this sequence. Not: what is this? But: what do I notice? The distinction is not pedantic. The first question reaches for a category. The second stays with direct experience long enough for the quality of the experience to reveal what the category would suppress.</p>
+</div>
+
+<span class="ornament">&#10103;</span>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- SECTION VI -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="section">
+  <span class="section-number">VI</span>
+  <h2>Chapter 7: Behaviour Registers the Field</h2>
+
+  <div class="quote-block">
+    <p class="quote-text">Behaviour registers the field before it is conceptualised. Before people name the environment they are in, they respond to it. Behaviour thus becomes one of the first observable indicators of the relational conditions shaping human systems. It provides a surface through which deeper patterns can be glimpsed. What becomes visible in action reflects what is unfolding within the environment of interaction.</p>
+    <p class="attribution">&mdash; Donald Innes Davies, <em>The Atmosphere of Human Systems</em>, Chapter 7, 2026</p>
+  </div>
+
+  <p class="body-text">This claim has direct implications for how organisational practitioners read behaviour. The dominant management paradigm treats behaviour as intentional: people do what they do because they have decided to, and they can be redirected by changing their decisions. The atmospheric account reverses this: behaviour registers the field. People do what they do because the field configuration makes certain responses available and others not. The behaviour is a field reading, not a free choice.</p>
+
+  <p class="body-text">This is Reich&rsquo;s most enduring clinical insight, translated into organisational terms. The character type &mdash; the compulsive, the hysterical, the rigid &mdash; was not chosen. It was formed in response to the energetic field of early relational environments, and it is continuously reproduced in response to the energetic quality of current relational fields. The practitioner who can read behaviour as field registration &mdash; who can ask <em>what is the atmospheric quality that is producing this response?</em> rather than <em>why has this person decided to behave this way?</em> &mdash; has access to a much richer and more accurate understanding of what is actually happening in the system.</p>
+
+  <hr class="divider">
+
+  <div class="quote-block">
+    <p class="quote-text">Behaviour is situated. It is shaped by conditions that extend beyond the individual. When this insight is brought into the context of human interaction, it begins to reveal more than simple stimulus-response relationships. Actions signal expectations. Responses indicate how those expectations are being met, resisted, or transformed. Through repeated interaction, individuals learn how to orient themselves within particular environments. They develop patterns of response that reflect the conditions in which they participate. In everyday life, these patterns are rarely analysed in formal terms, yet they are continuously interpreted. A change in tone, a shift in posture, a pause in speech, or an alteration in rhythm can indicate a change in the atmosphere of interaction. These signals are relational. They arise within a shared environment and contribute to its ongoing formation.</p>
+    <p class="attribution">&mdash; Donald Innes Davies, <em>The Atmosphere of Human Systems</em>, Chapter 7, 2026</p>
+  </div>
+
+  <p class="body-text">The signals are relational: this is the Gestalt field principle applied to the micro-events of interaction. A change in tone is not an individual event &mdash; it is a field event, arising in and from the relational field, contributing to the field&rsquo;s ongoing formation. The shift in posture is particularly significant in the energetic framework. Posture is, in Reich&rsquo;s somatic analysis, a direct expression of the character&rsquo;s armour configuration &mdash; the chronic muscular patterns through which the organism holds what it cannot afford to feel. When the atmosphere shifts, posture shifts: the body registers the atmospheric change before the mind has processed it.</p>
+</div>
+
+<span class="ornament">&#10103;</span>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- SECTION VII -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="section">
+  <span class="section-number">VII</span>
+  <h2>Chapter 21: Collective Effervescence</h2>
+
+  <div class="quote-block">
+    <p class="quote-text">At certain moments in social life, the energy of a gathering becomes unmistakable. It is felt before it is understood. Participants find themselves drawn into a shared rhythm of attention and response. Applause does not simply occur as isolated acts. It gathers, spreads, and becomes a single movement. Voices rise together in song, chant, or protest, not through coordination imposed from outside, but through a mutual attunement that seems to arise within the group itself. In such moments, something more than individual emotion is present. The atmosphere of the gathering becomes charged. It acquires a density that is felt as much as perceived. Individuals sense themselves participating in a field that exceeds their private experience, a field that shapes how they attend, how they respond, and how they act within the unfolding situation.</p>
+    <p class="attribution">&mdash; Donald Innes Davies, <em>The Atmosphere of Human Systems</em>, Chapter 21, 2026</p>
+  </div>
+
+  <p class="body-text">The atmosphere acquires <em>a density that is felt as much as perceived.</em> When the cardiac toroidal fields of a large group move into mutual coherence &mdash; when the collective field achieves what HeartMath researchers describe as <em>social coherence</em> &mdash; the electromagnetic field density in the shared space measurably increases. The felt density Davies describes is not phenomenological poetry. It is the somatic registration of a real change in the energetic configuration of the shared space.</p>
+
+  <hr class="divider">
+
+  <div class="quote-block">
+    <p class="quote-text">&Eacute;mile Durkheim observed that communal rituals frequently give rise to heightened states of shared emotional intensity. Participants become aware of themselves not only as individuals, but as members of a collective presence that emerges through their interaction. During such moments, the boundary between personal feeling and shared emotion becomes less distinct. What one person expresses is taken up by others, amplified, and returned in altered form. The emotional life of the group begins to circulate as a shared current. This current does not remain abstract. It is carried through bodies. Through gesture, voice, movement, and synchronisation, the group becomes a coordinated field of activity.</p>
+    <p class="attribution">&mdash; Donald Innes Davies, <em>The Atmosphere of Human Systems</em>, Chapter 21, 2026, summarising Durkheim 1915</p>
+  </div>
+
+  <p class="body-text"><em>The emotional life of the group begins to circulate as a shared current.</em> A current is not a metaphor for energy; it <em>is</em> energy &mdash; directional, carrier of information, capable of doing work. The Gestalt notion of <em>contact</em> &mdash; the living edge where organism and environment exchange &mdash; is the site at which this current flows most intensely. Genuine contact is energetically charged: it is the moment when the organism&rsquo;s field and the environmental field meet without armour, allowing the full exchange of which both are capable.</p>
+
+  <hr class="divider">
+
+  <div class="quote-block">
+    <p class="quote-text">Participants observe one another continuously. Responses are adjusted in real time. A chant spreads. Applause travels in waves. Emotional expressions ripple outward, shaped by timing, proximity, and intensity. Through this, amplification occurs. Small signals become large effects. Individual contributions are taken up and extended. The collective field acquires momentum, drawing participants into its movement. Within this process, orientation shifts. Attention moves outward. Individuals become absorbed in the shared activity. Reflection may recede as participation deepens. The atmosphere itself becomes the medium through which experience is organised.</p>
+    <p class="attribution">&mdash; Donald Innes Davies, <em>The Atmosphere of Human Systems</em>, Chapter 21, 2026</p>
+  </div>
+
+  <p class="body-text"><em>The atmosphere itself becomes the medium through which experience is organised.</em> The atmosphere is not merely context. It is medium: the substance through which experience propagates, the carrier wave of collective meaning. In the toroidal field model, this is literal: the collective electromagnetic field is the medium through which the micro-signals of individual experience propagate and interact.</p>
+
+  <hr class="divider">
+
+  <div class="quote-block">
+    <p class="quote-text">The power of collective effervescence is not singular in its effect. It carries both generative and ambiguous possibilities. Such moments may strengthen bonds of solidarity. Yet the same dynamics may intensify division. Rapid circulation of emotion may amplify tension. Alignment within a group may sharpen boundaries with those outside it. Collective atmosphere transforms. It does not simply express what individuals bring into the gathering. It reshapes it. The relational field acquires a force that influences perception and action beyond individual intention.</p>
+    <p class="attribution">&mdash; Donald Innes Davies, <em>The Atmosphere of Human Systems</em>, Chapter 21, 2026</p>
+  </div>
+
+  <p class="body-text">This is Davies at his most important and most cautious: collective effervescence is not inherently positive. Reich understood this acutely. His analysis of fascism &mdash; in <em>The Mass Psychology of Fascism</em> &mdash; was precisely an account of how the organisational conditions of armoured society could produce collective effervescence in the service of destructive rather than generative ends. The crowd whose charge cannot flow through genuine contact finds its discharge in collective aggression. The practitioner working with collective energy bears this responsibility: the question is not only whether the charge is moving but what it is moving toward.</p>
+
+  <hr class="divider">
+
+  <div class="quote-block">
+    <p class="quote-text">In this way, the atmosphere travels. It moves through memory, conversation, and representation. The relational environment of the gathering becomes part of a wider social field, influencing perception and behaviour beyond its immediate context.</p>
+    <p class="attribution">&mdash; Donald Innes Davies, <em>The Atmosphere of Human Systems</em>, Chapter 21, 2026</p>
+  </div>
+
+  <p class="body-text">The atmosphere travels: this is the temporal dimension of the field account. The gathering ends, but the field it generated does not simply cease. It propagates &mdash; through the bodies of those who were present, through the conversations they have about what occurred, through the representations that carry something of the gathering&rsquo;s energetic quality into new contexts. Tiller&rsquo;s research on <em>conditioned space</em> &mdash; the finding that sustained positive intention in a space alters the space&rsquo;s measurable physical properties in ways that persist after the intention-holders have left &mdash; is the experimental correlate of Davies&rsquo;s insight.</p>
+</div>
+
+<span class="ornament">&#10103;</span>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- SECTION VIII -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="section">
+  <span class="section-number">VIII</span>
+  <h2>Chapters 22 &amp; 23: Simmel&rsquo;s Spheres of Influence</h2>
+
+  <div class="quote-block">
+    <p class="quote-text">The atmosphere of a place often becomes perceptible before any specific event draws attention to it. One steps across a threshold, and something is already there. A quiet library carries a shared expectation of stillness. Voices soften without instruction. Movement becomes measured. Attention gathers. In a crowded caf&eacute;, the opposite quality emerges. Sound layers upon sound. Conversation overlaps. The environment invites participation of a different kind. One leans into the movement rather than withdrawing from it. These adjustments occur with little deliberation. They are immediate. Even in unfamiliar settings, individuals orient themselves with remarkable speed. They sense whether the environment invites ease or reserve, openness, or caution. Behaviour aligns accordingly, not through explicit guidance, but through attunement to the qualities of the space.</p>
+    <p class="attribution">&mdash; Donald Innes Davies, <em>The Atmosphere of Human Systems</em>, Chapter 22, 2026</p>
+  </div>
+
+  <p class="body-text">One steps across a threshold, and something is already there. The accumulated toroidal field history of a space &mdash; the electromagnetic residue of the intentions, emotions, and relational configurations that have played out within it &mdash; constitutes what Davies here names the atmosphere of a place. This is Tiller&rsquo;s conditioned space at the perceptual level: the practitioner whose further sense is sufficiently developed enters a space and reads, through their own somatic response, the field history the space carries.</p>
+
+  <hr class="divider">
+
+  <div class="quote-block">
+    <p class="quote-text">Georg Simmel observed that individuals do not enter situations as bounded, self-contained entities. Each person carries a presence that extends beyond their physical form, a presence sensed in interaction rather than contained within the individual. This presence is expressed through posture, gesture, tone, orientation, and attention. It is sensed by others, often immediately, before any word is spoken. Something is already communicated. A quality of approach or distance, ease or tension, receptivity or reserve begins to shape the interaction before it formally begins.</p>
+    <p class="attribution">&mdash; Donald Innes Davies, <em>The Atmosphere of Human Systems</em>, Chapter 22, 2026</p>
+  </div>
+
+  <p class="body-text">This is the toroidal field model in phenomenological dress. The cardiac toroidal field extends approximately 0.9 to 1.2 metres from the body under normal conditions and significantly further during states of strong emotional activation. The <em>presence</em> Davies and Simmel are naming is not a metaphor for social impact. It is the felt quality of an actual electromagnetic field whose configuration communicates the person&rsquo;s internal state before any voluntary signal has been given.</p>
+
+  <hr class="divider">
+
+  <div class="quote-block">
+    <p class="quote-text">When individuals share an environment, their spheres of influence overlap. They intersect. They combine. The space between participants becomes charged with expectation, interpretation, and tone. What emerges is not reducible to any one contribution. It is a relational field within which interaction unfolds. Participants respond not only to one another, but to the field itself. In this sense, the field is not given in advance. It is continuously formed through the presence and responsiveness of those within it.</p>
+    <p class="attribution">&mdash; Donald Innes Davies, <em>The Atmosphere of Human Systems</em>, Chapter 22, 2026</p>
+  </div>
+
+  <p class="body-text">Participants respond not only to one another, but to the field itself. This is the precise claim that distinguishes a field account from a dyadic account. In the field model, A and B both respond to the field that their interaction has generated &mdash; a field that has emergent properties neither A nor B produced alone. The therapeutic implication extended to organisations: change cannot always be produced by working with individuals or pairs. Sometimes the field itself must be worked with. The intervention that changes a group&rsquo;s atmosphere is not always an intervention with a person; sometimes it is an intervention with the field configuration: a spatial rearrangement, a silence held at a particular moment, a question that shifts the entire relational topology.</p>
+
+  <hr class="divider">
+
+  <div class="quote-block">
+    <p class="quote-text">A workshop may develop a quiet intensity, shaped by shared concentration. A familiar meeting place may carry a sense of ease, sustained through recognition and informal exchange. A formal environment may guide behaviour toward restraint and deliberation. These atmospheres do not arise instantly. They take form over time. Repeated greetings, gestures of acknowledgement, patterns of conversation, and shared experiences accumulate. Through this accumulation, the environment acquires a coherence that becomes recognisable to those who inhabit it. What was once emergent becomes expected.</p>
+    <p class="attribution">&mdash; Donald Innes Davies, <em>The Atmosphere of Human Systems</em>, Chapter 22, 2026</p>
+  </div>
+
+  <p class="body-text"><em>What was once emergent becomes expected.</em> This is both a description of how atmospheres stabilise and a warning about how they become rigid. The atmosphere that was once generative can become the organisation&rsquo;s collective armour: the pattern of interaction that was once a creative response to the environment becoming the chronic contraction that prevents genuinely new responses to changed conditions.</p>
+
+  <hr class="divider">
+
+  <div class="quote-block">
+    <p class="quote-text">Each participant contributes to the atmosphere through their presence and response. At the same time, each is shaped by the presence and responses of others. Influence does not move in a single direction. It circulates. A gesture becomes meaningful through response. A tone develops through repetition. A pattern stabilises through reinforcement. Through these processes, the relational field acquires coherence. This coherence is not imposed. It emerges. The atmosphere reflects the interaction of many contributions, forming a pattern that cannot be reduced to any single intention.</p>
+    <p class="attribution">&mdash; Donald Innes Davies, <em>The Atmosphere of Human Systems</em>, Chapter 22, 2026</p>
+  </div>
+
+  <p class="body-text">Influence does not move in a single direction. It circulates. The toroidal field itself is a model of circulating influence: the field folds back through its own centre, each point in the torus both contributing to and being shaped by the field configuration it is part of. Applied to the relational field, this means that the practitioner is always both reading the atmosphere and generating it. There is no neutral observation.</p>
+
+  <hr class="divider">
+
+  <div class="quote-block">
+    <p class="quote-text">Simmel&rsquo;s notion of spheres of influence draws attention to what is often overlooked. The space between. It is within this space that presence, perception, and response converge. It is here that atmosphere forms, not as an abstraction, but as a lived condition of interaction. To notice this is to recognise that human experience unfolds within relational fields. Places are not simply occupied. They are enacted. Their atmosphere reflects the ongoing interplay of those who inhabit them, shaped by histories of interaction and open to transformation.</p>
+    <p class="attribution">&mdash; Donald Innes Davies, <em>The Atmosphere of Human Systems</em>, Chapter 22, 2026</p>
+  </div>
+
+  <p class="body-text"><em>Places are not simply occupied. They are enacted.</em> The enacted atmosphere can be differently enacted. The field that has become armoured can be worked with. Because the atmosphere is continuously enacted through participation, it is continuously available for different enactment. Not instantly, not without effort, not without working with what the field is actually holding. But available.</p>
+</div>
+
+<span class="ornament">&#10103;</span>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- SECTION IX -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="section">
+  <span class="section-number">IX</span>
+  <h2>Chapter 24: Conversational Realities</h2>
+
+  <div class="quote-block">
+    <p class="quote-text">Human beings do not encounter one another as isolated minds exchanging information. They meet within situations already alive. Tone is present before words. Expectation precedes articulation. Response begins to form even as a sentence unfolds. What is said enters into an environment that is already shaping how it will be heard. Meaning does not reside in words alone. It emerges in the movement between them. A remark offered lightly may give rise to laughter in one setting and unease in another. A question intended as curiosity may be received as challenge. The same phrase, carried into a different atmosphere, acquires a different significance. Language lives within relation.</p>
+    <p class="attribution">&mdash; Donald Innes Davies, <em>The Atmosphere of Human Systems</em>, Chapter 24, 2026</p>
+  </div>
+
+  <p class="body-text">Language lives within relation: this is the atmospheric account of linguistic meaning. The same words in a charged atmosphere and in an open one are not the same words. The field through which they travel shapes how they are received in ways that can be utterly opaque to the speaker. In Gestalt contact theory, this is the principle of <em>retrofletion</em>: when the field is such that genuine contact would be dangerous, the organism turns its communicative intent back on itself &mdash; says something indirect, qualifies the direct expression out of existence, or simply falls silent.</p>
+
+  <hr class="divider">
+
+  <div class="quote-block">
+    <p class="quote-text">Conversation therefore unfolds as a living process. Participants adjust continuously, often without awareness. A pause invites continuation. A glance signals hesitation. A subtle shift in tone redirects the exchange. These micro-movements accumulate. They shape the unfolding. No single participant determines the course of the conversation. Direction arises through the interplay of contributions. Something begins to take form between those present, not owned by any one of them, yet shaped by all. Conversation becomes a shared field of activity. Within it, meaning is not transmitted. It is formed.</p>
+    <p class="attribution">&mdash; Donald Innes Davies, <em>The Atmosphere of Human Systems</em>, Chapter 24, 2026</p>
+  </div>
+
+  <p class="body-text">Meaning is not transmitted. It is formed. If meaning is formed &mdash; constituted in the relational field between participants &mdash; then the work of communication is to create the field conditions under which genuine formation can occur. Two people in a state of mutual field coherence &mdash; whose cardiac rhythms have begun to entrain, whose nervous systems are in co-regulation &mdash; are capable of forming meanings that two people in a state of mutual field disruption cannot access, regardless of the accuracy of their language.</p>
+
+  <hr class="divider">
+
+  <div class="quote-block">
+    <p class="quote-text">There are moments when this becomes especially visible. A conversation shifts direction without planning. A passing remark opens a new line of inquiry. Participants find themselves following a path none had anticipated. It can feel as though the conversation itself is thinking. This generative quality reflects the relational nature of dialogue. The interplay of perspectives creates conditions in which new understanding arises, shaped through responsiveness. Conversation becomes a site of emergence.</p>
+    <p class="attribution">&mdash; Donald Innes Davies, <em>The Atmosphere of Human Systems</em>, Chapter 24, 2026, summarising Shotter</p>
+  </div>
+
+  <p class="body-text">The conversation that is <em>thinking</em> &mdash; that generates understanding that none of its participants brought to it &mdash; is the conversational equivalent of collective effervescence: the field producing something beyond the sum of its contributors. Reich would have called this <em>orgastic potency</em> at the conversational scale &mdash; the capacity for the encounter to discharge its accumulated tension in a genuinely releasing, genuinely creative way. The conversation that never quite gets there, that circles and recirculates without achieving the generative moment, is the conversationally armoured encounter: charged but not able to move.</p>
+
+  <hr class="divider">
+
+  <div class="quote-block">
+    <p class="quote-text">Hans-Georg Gadamer offers a way of understanding how such formation becomes possible. Each participant enters conversation with a horizon shaped by language, history, and experience. This horizon remains open. It orients attention, guiding what is noticed and how it is interpreted. Conversation brings these horizons into encounter. They meet, overlap, and respond to one another. Assumptions become visible. Interpretations shift. Gadamer describes this as a fusion of horizons. Understanding is not something possessed in advance. It happens. In time, attention shifts from what is said to the atmosphere within which it becomes possible to say it.</p>
+    <p class="attribution">&mdash; Donald Innes Davies, <em>The Atmosphere of Human Systems</em>, Chapter 24, 2026</p>
+  </div>
+
+  <p class="body-text">Attention shifts from <em>what is said</em> to <em>the atmosphere within which it becomes possible to say it.</em> This is the progression from content analysis to field analysis. In Gestalt terms, this is the move from figure to ground: from attending to what has emerged from the field to attending to the field itself. The practitioner who can make this move consistently has the most complete instrument available for understanding what is actually happening in an organisational encounter.</p>
+</div>
+
+<span class="ornament">&#10103;</span>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- SECTION X -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="section">
+  <span class="section-number">X</span>
+  <h2>Chapters 27&ndash;29: Persisting, Shifting, Recognising</h2>
+
+  <div class="quote-block">
+    <p class="quote-text">Atmosphere is rarely the immediate focus of attention. Participants tend to orient themselves toward what appears explicit: the content of discussion, the task at hand, the outcome to be achieved. These elements draw the eye because they can be named, measured, and evaluated. Yet within the unfolding of interaction, something else is always present: the atmosphere within which the situation is taking shape. It is this atmosphere that shapes how words are spoken, how they are received, and what possibilities appear available within the exchange.</p>
+    <p class="attribution">&mdash; Donald Innes Davies, <em>The Atmosphere of Human Systems</em>, Chapter 29, 2026</p>
+  </div>
+
+  <p class="body-text">What can be named, measured, and evaluated draws the eye: this is not merely cognitive preference but a field effect. The organisational atmosphere &mdash; particularly in armoured organisations &mdash; actively suppresses the attention directed toward it. The practitioner who can maintain attention on both the explicit content and the atmospheric ground &mdash; who can sustain what Gestalt calls <em>dual awareness</em> &mdash; is the practitioner doing the most complete form of organisational reading available.</p>
+
+  <hr class="divider">
+
+  <div class="quote-block">
+    <p class="quote-text">Atmosphere persists. Traces of past encounters are carried into present response. Participants do not begin anew with each encounter. They bring prior experience into the present. Expectations, interpretations, and habits of response carry forward, shaping how new situations are approached. This gives the pattern of atmosphere a certain inertia. It does not shift immediately with circumstance. It evolves through the movement of interaction, and that movement is shaped by what has already been lived.</p>
+    <p class="attribution">&mdash; Donald Innes Davies, <em>The Atmosphere of Human Systems</em>, Chapter 28, 2026</p>
+  </div>
+
+  <p class="body-text">Atmosphere persists: this is the Reichian character insight at the social scale. The organisation, like the individual, carries its history in its somatic patterns. The persistence of atmosphere is also the foundation of its transformability. Because the atmosphere carries its history in somatic patterns, it can be worked with. The practitioner who can identify the historical pattern that is being carried forward in the current atmospheric configuration has identified the node of intervention.</p>
+
+  <hr class="divider">
+
+  <div class="quote-block">
+    <p class="quote-text">Yet atmospheres are never fixed. New experiences introduce variation into interaction. A moment of challenge opens previously unexamined questions. A new participant introduces a different orientation. A shift in circumstance prompts reconsideration. At first, these signals appear small. They may pass without immediate recognition. Yet they enter into the unfolding interaction. They begin to influence response. Participants may notice a subtle change in tone. Conversations that once followed familiar paths become more exploratory. Expressions of uncertainty invite new forms of engagement. Gradually, the atmosphere begins to shift.</p>
+    <p class="attribution">&mdash; Donald Innes Davies, <em>The Atmosphere of Human Systems</em>, Chapter 28, 2026</p>
+  </div>
+
+  <p class="body-text">Phase transitions are typically preceded by a period of increased sensitivity to small perturbations: what complexity science calls <em>critical slowing down</em>. The atmosphere that is on the verge of shifting becomes, paradoxically, more volatile and more responsive to small signals precisely because its current configuration is losing stability. The practitioner who can read these early signals is operating at the temporal leading edge of atmospheric change.</p>
+
+  <hr class="divider">
+
+  <div class="quote-block">
+    <p class="quote-text">Transformation rarely arrives as a single decisive moment. More often, it unfolds through a series of small adjustments. A question is asked differently. A response is offered with greater openness. A hesitation gives way to articulation. Each of these moments becomes part of the evolving pattern, altering its direction in ways that may only become visible over time. Through this sensitivity, reconfiguration becomes possible. Patterns that once dominated begin to recede. Others emerge. No single action determines the course of change. Each contribution becomes part of the ongoing pattern, influencing how others respond. What emerges is not imposed. It is formed within the relational process.</p>
+    <p class="attribution">&mdash; Donald Innes Davies, <em>The Atmosphere of Human Systems</em>, Chapter 28, 2026</p>
+  </div>
+
+  <p class="body-text">This is the therapeutic model of atmospheric work applied to organisational practice. Reich&rsquo;s clinical work with character was precisely this: the sustained, patient work of introducing small adjustments that gradually built toward the larger reorganisation. Not dramatic confrontation but the progressive loosening of the armour through work done at its softest edges.</p>
+
+  <hr class="divider">
+
+  <div class="quote-block">
+    <p class="quote-text">Those who remain attentive to relational shifts often perceive change as it begins. They notice when tone alters, when openness expands or contracts, and when new possibilities begin to appear. This awareness does not grant certainty. It allows participation. To notice is to take part in the unfolding.</p>
+    <p class="attribution">&mdash; Donald Innes Davies, <em>The Atmosphere of Human Systems</em>, Chapter 28, 2026, citing Mead 1934</p>
+  </div>
+
+  <p class="body-text"><em>To notice is to take part in the unfolding.</em> To notice the atmospheric shift is to alter the atmospheric shift. The observer is a participant. Language, in the field account, is not merely representational. It is a field intervention: it alters the configuration of the relational field by making available, at the symbolic level, what was previously available only at the somatic level.</p>
+
+  <hr class="divider">
+
+  <div class="quote-block">
+    <p class="quote-text">Across these pages, a series of movements has unfolded, each opening a different way of attending to the relational character of human life. Through participation, patterns form, stabilise, and shift. They gather gradually into configurations that acquire a coherence exceeding the individual contributions from which they arise. What comes into view across these movements is a common insight: human life unfolds within relational environments that are not external contexts surrounding action, but conditions generated through action itself. They shape perception, guide response, and influence the development of meaning within shared situations. Atmosphere comes into view as the medium through which social life is felt, interpreted, and lived.</p>
+    <p class="attribution">&mdash; Donald Innes Davies, <em>The Atmosphere of Human Systems</em>, Chapter 29, 2026</p>
+  </div>
+
+  <p class="body-text"><em>Atmosphere comes into view as the medium through which social life is felt, interpreted, and lived.</em> This is Davies&rsquo;s synthesising claim, and it positions atmosphere not as one variable among many but as the medium &mdash; the carrier substance &mdash; of organisational life itself. The field is not background; it is ground.</p>
+
+  <hr class="divider">
+
+  <div class="quote-block">
+    <p class="quote-text">To recognise atmosphere requires a shift in attention. What had been taken as background begins to come forward, and what once seemed incidental acquires significance. Attention moves away from isolated events and toward the patterns connecting them, away from individual actions taken separately and toward the relational field within which those actions take shape. This shift often begins in a deceptively simple way. One pauses. Entering a room, one begins to notice how interaction is already unfolding: the cadence of exchange, the quality of attention, the manner in which participants respond to one another.</p>
+    <p class="attribution">&mdash; Donald Innes Davies, <em>The Atmosphere of Human Systems</em>, Chapter 29, 2026</p>
+  </div>
+
+  <p class="body-text">One pauses. The pause is not peripheral to the practitioner&rsquo;s method &mdash; it is structural. The atmospheric field becomes perceptible when the practitioner pauses the habitual movement toward content and outcome and allows the peripheral, somatic, pre-linguistic signals to rise into awareness. Reich would have said: the pause is the moment in which the breath deepens, the armour loosens its grip, and the organism&rsquo;s natural sensitivity to its energetic environment is temporarily restored.</p>
+
+  <hr class="divider">
+
+  <div class="quote-block">
+    <p class="quote-text">With continued attention, perception begins to refine. Subtle signals register more clearly. A pause is no longer empty, but begins to carry meaning. Tone becomes differentiated. Timing becomes expressive. Response becomes revealing. These signals do not stand alone. They gather into patterns that extend across moments of interaction, acquiring significance through what precedes and follows them. A moment of hesitation may alter the direction of a discussion because of the responses it evokes. A gesture of acknowledgement may change the trajectory of what unfolds next. A shift in tone may indicate that the relational environment itself has changed, opening some possibilities while closing others.</p>
+    <p class="attribution">&mdash; Donald Innes Davies, <em>The Atmosphere of Human Systems</em>, Chapter 29, 2026</p>
+  </div>
+
+  <p class="body-text">With continued attention, perception begins to refine. This is the developmental account of the further sense: it is cultivated, not given. The practitioner who has spent twenty years attending to relational environments reads them differently from the practitioner in their first year &mdash; not because they have more theory but because their perceptual instrument has been progressively refined through sustained use.</p>
+
+  <hr class="divider">
+
+  <div class="quote-block">
+    <p class="quote-text">Recognition begins to alter the quality of participation. Awareness creates a subtle but significant space within response, making it possible for individuals to sense the conditions within which their own responses arise. What might previously have been enacted automatically becomes available to variation. A question may be offered differently, a contribution timed with greater sensitivity, a moment of listening extended in a way that gently alters what becomes possible. To recognise atmosphere is therefore never a purely observational act. It changes the manner of participation itself.</p>
+    <p class="attribution">&mdash; Donald Innes Davies, <em>The Atmosphere of Human Systems</em>, Chapter 29, 2026</p>
+  </div>
+
+  <p class="body-text">What might previously have been enacted automatically becomes available to variation. This is the therapeutic claim at its most precise: awareness creates the conditions for choice where previously there was only automatic response. Applied organisationally: the group that has developed atmospheric awareness discovers that its habitual conversational patterns are not inevitable. They are enacted. And if they can be noticed, they can be varied.</p>
+
+  <hr class="divider">
+
+  <div class="quote-block">
+    <p class="quote-text">There is no outside position from which social life can be observed without participation. Organisations, communities, and gatherings begin to appear differently when seen in this way. They are no longer static arrangements or neutral settings within which activity occurs. They are living environments, continuously formed through interaction. Each presence contributes, and each response participates in shaping what becomes possible. Atmosphere is experienced collectively, yet it is formed through the ongoing engagement of those within it.</p>
+    <p class="attribution">&mdash; Donald Innes Davies, <em>The Atmosphere of Human Systems</em>, Chapter 29, 2026, citing Elias 1987</p>
+  </div>
+
+  <p class="body-text">There is no outside position. The practitioner is a field event: their presence, their cardiac toroidal field, their degree of coherence or anxiety, their quality of attention, all contribute to the atmospheric configuration of the space they have entered. They cannot be subtracted from their data. Rigour in atmospheric work is not the rigour of the controlled experiment. It is the rigour of sustained reflexivity &mdash; the continuous practice of noticing one&rsquo;s own contribution to the field one is reading.</p>
+</div>
+
+<span class="ornament">&#10103;</span>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- SECTION XI -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="section">
+  <span class="section-number">XI</span>
+  <h2>Chapter 30: Chordic Navigation</h2>
+
+  <div class="quote-block">
+    <p class="quote-text">For many of us, human life unfolds within environments in which we rarely pause to notice. Conversations begin and end. Meetings gather and disperse. Communities form around routines so familiar that they seem almost self-sustaining. Within these rhythms, relational environments are continually taking shape through the presence and responses of those who participate in them. It seems that most of the time, these environments remain unnoticed. Attention is often drawn toward tasks, decisions, and visible events. People concern themselves with what must be completed, what must be resolved, and what must be said. Yet beneath these immediate concerns, something else is always present. The atmosphere of the interaction itself.</p>
+    <p class="attribution">&mdash; Donald Innes Davies, <em>The Atmosphere of Human Systems</em>, Chapter 30, 2026</p>
+  </div>
+
+  <p class="body-text">The atmosphere is always present. The Reichian insight here is that the <em>failure to notice</em> is not neutral. The unnoticed atmosphere accumulates. The charge that is not read, not metabolised, not moved, persists &mdash; building in the organisation&rsquo;s collective somatic field, expressing itself in the increasing heaviness of the meetings, the chronic low-grade tension that everyone feels and no one names, the mounting difficulty of the conversations that matter most.</p>
+
+  <hr class="divider">
+
+  <div class="quote-block">
+    <p class="quote-text">The central invitation of this book has been simple. To notice. To notice that human systems are not merely collections of individuals, nor merely arrangements of institutions, roles, or procedures. They are living relational environments formed through countless interactions, each carrying traces of response, expectation, and interpretation. What first appears as a series of separate events gradually reveals itself as something more continuous. A field. A conversation becomes more than an exchange of views. It becomes an evolving pattern of response. A meeting reveals the subtle dynamics through which ideas gain support, encounter hesitation, or quietly lose momentum.</p>
+    <p class="attribution">&mdash; Donald Innes Davies, <em>The Atmosphere of Human Systems</em>, Chapter 30, 2026</p>
+  </div>
+
+  <p class="body-text">They are <em>living</em> relational environments. The word carries weight. Living: capable of growth and decay, of organisation and disorganisation, of responsiveness and, under certain conditions, of renewal. The organisation that has lost this living quality has lost something that cannot be restored by better procedures. It requires the conditions for genuine encounter to be re-established.</p>
+
+  <hr class="divider">
+
+  <div class="quote-block">
+    <p class="quote-text">Two organisations may possess similar structures, similar resources, and similar formal aims, yet the lived atmosphere of interaction may differ profoundly. In one, people may feel able to raise concerns early, think together, and explore uncertainty. In another, the same concerns may remain unspoken until they become difficult to contain. The difference lies not only in policy. It lies in the relational environment through which policy is lived. Atmosphere influences how people perceive their shared world. It guides attention, shapes interpretation, and subtly orients the direction of collective action. A tense atmosphere makes some possibilities harder to imagine and others easier to anticipate. An atmosphere of trust widens the space within which uncertainty can be shared.</p>
+    <p class="attribution">&mdash; Donald Innes Davies, <em>The Atmosphere of Human Systems</em>, Chapter 30, 2026</p>
+  </div>
+
+  <p class="body-text">The same concerns remaining unspoken until they become difficult to contain: this is the precise phenomenology of organisational armour. The unspoken concern is not merely information withheld; it is charge held. And as Reich demonstrated, the held charge does not dissolve harmlessly. It becomes difficult to contain. The moment of disclosure, when it comes, often carries more force than the original concern warranted, precisely because it has accumulated the energy of all the times it was not said.</p>
+
+  <hr class="divider">
+
+  <div class="quote-block">
+    <p class="quote-text">Atmosphere is therefore not an accessory to social life. It is one of the conditions through which social life becomes what it is.</p>
+    <p class="attribution">&mdash; Donald Innes Davies, <em>The Atmosphere of Human Systems</em>, Chapter 30, 2026</p>
+  </div>
+
+  <p class="body-text" style="font-style:italic; color: var(--plum-mid);">This is the sentence that most needs to stand on its own. Atmosphere is not an accessory. It is constitutive. Strategy is formed within an atmosphere. Leadership is exercised within an atmosphere. Culture is enacted as atmosphere. The organisation that attends to its atmosphere is attending to the conditions through which everything else it does becomes possible or impossible.</p>
+
+  <hr class="divider">
+
+  <div class="quote-block">
+    <p class="quote-text">Human systems do not move through rigid plans or mechanical chains of cause and effect. Interaction unfolds through shifting constellations of relationship. Signals circulate through conversation, gesture, expectation, and interpretation. Participants adjust, often without fully realising it, to the movements of others within the shared environment. Over time, these adjustments begin to form patterns. These patterns resemble navigation more than control. It becomes possible to think of this as chordic navigation. In music, a chord arises as several notes sound together, creating a resonance that none could produce alone. Each note retains its character, yet together they generate a pattern that alters the tonal quality of the whole. A subtle shift in one note changes the resonance of everything that follows. Social life unfolds in much the same way. Individuals speak, respond, hesitate, and reinterpret one another&rsquo;s actions. Meanings circulate through the relational environment. Gradually, a pattern of resonance begins to emerge. The atmosphere shifts. Possibilities that once seemed distant begin to move within reach. Movement within human systems depends upon the capacity to sense emerging resonance more than upon instruction. Participants feel when a conversation is opening, when tension is building, when cooperation becomes possible, and when something new is beginning to take shape. They move through the evolving tonal qualities of the relational field, rather than along fixed coordinates. To live within social worlds is to participate in a continual act of chordic navigation.</p>
+    <p class="attribution">&mdash; Donald Innes Davies, <em>The Atmosphere of Human Systems</em>, Chapter 30 &mdash; Navigating the Atmosphere, 2026</p>
+  </div>
+
+  <p class="body-text">Chordic navigation: the metaphor integrates everything the atmospheric account has been building toward. The chord is the organisational equivalent of the toroidal field configuration &mdash; a pattern of resonance that none of the individual contributors could produce alone, that is more than the sum of its parts, and that changes when any element changes because all elements are in relation.</p>
+
+  <p class="body-text">The practitioner who is doing chordic navigation is working from the full energetic account: reading the field through the further sense, attending to the atmospheric quality of the relational environment, noticing when the chord is consonant and when it is dissonant, contributing through the quality of their own presence and attention to the resonance pattern that is emerging. They are not managing outcomes. They are navigating a field.</p>
+
+  <p class="body-text">Reich&rsquo;s armoured practitioner cannot do chordic navigation. They are, by the nature of their armour, isolated from the very field signals through which chordic navigation operates. The de-armoured practitioner &mdash; the one who has done the work of dissolving the defensive structures that filter the field&rsquo;s signals before they reach awareness &mdash; has access to the full frequency range through which the organisational field communicates.</p>
+</div>
+
+<span class="ornament">&#10103;</span>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- SECTION XII -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="section">
+  <span class="section-number">XII</span>
+  <h2>The Afterword and Final Coda</h2>
+
+  <div class="quote-block">
+    <p class="quote-text">There is nothing here that requires conclusion. The movements of this inquiry have not led to a final answer, nor have they offered a framework to be applied. Instead, they have invited a different way of attending to the world. If something has shifted, it will not appear as a sudden transformation. It will appear quietly. In a conversation that feels slightly different. In a meeting where the atmosphere becomes more noticeable. In a moment of hesitation that reveals something about the situation unfolding. What has been explored in these pages was never hidden. Relational environments are present in every interaction. To recognise them is not to gain control. It is to participate with greater attentiveness. Atmospheres arise between people. They are shared, shaped, and sustained through participation. Each person contributes, whether intentionally or not, to the environments they inhabit.</p>
+    <p class="attribution">&mdash; Donald Innes Davies, <em>The Atmosphere of Human Systems</em>, Afterword, 2026</p>
+  </div>
+
+  <p class="body-text">To recognise them is not to gain control. It is to participate with greater attentiveness. This is the decisive final distinction between the atmospheric account and the management paradigm. Management seeks control. Atmospheric work seeks attentiveness. Not because attentiveness is less ambitious &mdash; in fact it is more demanding &mdash; but because the field cannot be controlled, only participated in. The practitioner who understands this has abandoned the fundamental fantasy of management for something both more modest and more real: the capacity to participate, fully and attentively, in the living present of what is actually occurring.</p>
+
+  <hr class="divider">
+
+  <div class="quote-block">
+    <p class="quote-text">There is a moment, difficult to locate precisely, when something long present begins to stand out. Nothing new has been added. The conversations, the rooms, the patterns of interaction continue as before. Yet something shifts. What once sat quietly in the background begins to gather form. What had been taken as incidental starts to appear as shaping. What seemed diffuse reveals a coherence that was always there, waiting to be noticed. This is not the discovery of an object. It is a change in what can be perceived.</p>
+    <p class="attribution">&mdash; Donald Innes Davies, <em>The Atmosphere of Human Systems</em>, Final Coda, 2026</p>
+  </div>
+
+  <p class="body-text">A change in what can be perceived. Something shifts not in the world but in the practitioner&rsquo;s perceptual capacity &mdash; and in shifting their perception, they gain access to a dimension of the world that was always present but unavailable. The atmosphere has always been there. The practitioner now sees it.</p>
+
+  <p class="body-text">Reich called this the restoration of natural perception &mdash; the recovery of the organism&rsquo;s innate sensitivity to its energetic environment that the armour had suppressed. Davies calls it a change in what can be perceived. Both are pointing at the same irreversible expansion of the practitioner&rsquo;s perceptual range: once you have noticed the atmosphere, you cannot un-notice it. The field that was background becomes ground. And from ground, the practice of genuine organisational work can truly begin.</p>
+
+  <hr class="divider">
+
+  <div class="quote-block">
+    <p class="quote-text">Atmosphere has been approached here as constitutive of the social itself. From this point, different kinds of work become possible. Some may wish to develop this more formally. Some may connect it to existing traditions of thought. Some may explore how it can be worked with in practice. Others may simply continue to notice how situations feel, and how those feelings shape what unfolds. Nothing further is required. Only attention. The atmosphere has always been there. What changes is the capacity to perceive it. Once it is seen in this way, it becomes difficult to ignore. Situations that once appeared straightforward begin to show depth. Interactions that once seemed simple begin to reveal their texture. And it begins, as it always has, in the living present of interaction.</p>
+    <p class="attribution">&mdash; Donald Innes Davies, <em>The Atmosphere of Human Systems</em>, Final Coda, 2026</p>
+  </div>
+
+  <p class="body-text">And it begins, as it always has, in the living present of interaction. Davies ends where the Hertfordshire tradition always places us: in the living present, in the midst of what is actually happening, in the encounter that is constituting itself even as we attend to it. The atmospheric account does not give us a method to apply before the encounter begins. It gives us a quality of attention to bring to the encounter as it unfolds &mdash; and, in bringing it, to contribute to the very field we are reading.</p>
+
+  <p class="body-text">This is the paradox and the gift of atmospheric work: the more precisely you attend to the field, the more the field is shaped by your attention. You cannot be a neutral reader of the atmosphere. But you can be an attentive one. And in being attentive &mdash; fully, patiently, with the further sense cultivated and the armour progressively dissolved &mdash; you participate in the kind of organisational life that Davies has spent this book helping us to perceive: living, relational, continuously forming, and inexhaustibly available to the practitioner whose attention is adequate to its complexity.</p>
+</div>
+
+<!-- ═══ CLOSING ═════════════════════════════════════════════════════ -->
+<div class="closing">
+  <span class="ornament" style="margin:0 0 24px;">&#10103;</span>
+  <p class="epigraph-line">The atmosphere has always been there.</p>
+  <p class="epigraph-line">What changes is the capacity to perceive it.</p>
+</div>
+
+<button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">&#8679;</button>
+
+<script>
+  // Reading progress bar
+  window.addEventListener('scroll', () => {
+    const el = document.documentElement;
+    const pct = (el.scrollTop / (el.scrollHeight - el.clientHeight)) * 100;
+    document.getElementById('progress').style.width = pct + '%';
+    const btn = document.getElementById('back-top');
+    if (el.scrollTop > 600) btn.classList.add('visible');
+    else btn.classList.remove('visible');
+  });
+</script>
+
+</body>
+</html>
